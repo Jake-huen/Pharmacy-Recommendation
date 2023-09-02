@@ -1,0 +1,14 @@
+# 테스트 코드를 실행할 때 참조하는 파일
+spring:
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:mysql:8:///
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+kakao:
+  rest:
+    api:
+      key: 9759fd53a9702f5a60fa34e96b979b98

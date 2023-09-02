@@ -16,7 +16,6 @@ class KakaoUriBuilderServiceTest extends Specification {
         given:
         String address = "광나루로458"
         def charset = StandardCharsets.UTF_8
-
         when:
         def uri = kakaoUriBuilderService.buildUriByAddressSearch(address) // 타입 동적으로 선언함
         // 디코딩 시켜서 예상했던 결과값과 일치하는지 판단
