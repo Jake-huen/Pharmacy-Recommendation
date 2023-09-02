@@ -1,3 +1,3 @@
-FROM redis:6
+FROM redis:latest
 
 ENV TZ=Asia/Seoul

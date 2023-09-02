@@ -14,7 +14,6 @@ spring:
     activate:
       on-profile: common
 
-# ...
 
 ---
 spring:
@@ -23,9 +22,9 @@ spring:
       on-profile: local
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/pharmacy-recommendation
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: jdbc:mysql://localhost:3306/pharmacyRecommendation
+    username: root
+    password: rlaxogjs8312@
   redis:
     host: localhost
     port: 6379
