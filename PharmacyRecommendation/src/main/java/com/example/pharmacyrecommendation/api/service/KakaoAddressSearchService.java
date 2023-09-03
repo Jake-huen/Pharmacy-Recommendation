@@ -27,11 +27,10 @@ public class KakaoAddressSearchService {
     public KakaoApiResponseDto requestAddressSearch(String address) {
 
         if(ObjectUtils.isEmpty(address)) return null;
-
         URI uri = kakaoUriBuilderService.buildUriByAddressSearch(address);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "KakaoAK" + kakaoRestApiKey);
+        headers.set("Authorization", "KakaoAK " + kakaoRestApiKey);
         HttpEntity httpEntity = new HttpEntity<>(headers);
 
         // kakao api 호출
