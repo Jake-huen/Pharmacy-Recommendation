@@ -13,4 +13,9 @@
 - groovy
 - testcontainers
 
+### [알고리즘]
+거리 계산 : [하버 사인 공식](https://en.wikipedia.org/wiki/Haversine_formula)
+두 위도, 경도 사이의 거리를 계산하기 위한 알고리즘
+
+
 
