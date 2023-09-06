@@ -16,9 +16,9 @@ services:                                               # 이 항목 밑에 실�
     image: mysql:latest
     environment:
       - MYSQL_DATABASE=pharmacyRecommendation
-      - MYSQL_ROOT_PASSWORD=rlaxogjs8312@
+      - MYSQL_ROOT_PASSWORD=rlaxogjs8312
     volumes:
       - ./database/config:/etc/mysql/conf.d # 도커가 읽게되는 디렉토리
-      # - ./database/init:/docker-entrypoint-initdb.d
+      - ./database/init:/docker-entrypoint-initdb.d
     ports:
-      - "3306:3306"      # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)
+      - "3308:3306"      # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)
