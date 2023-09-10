@@ -30,8 +30,8 @@ public class PharmacySearchService {
     private PharmacyDto converToPharmacyDto(Pharmacy pharmacy) {
         return PharmacyDto.builder()
                 .id(pharmacy.getId())
-                .pharmacyAddress(pharmacy.getPharmacyAddress())
                 .pharmacyName(pharmacy.getPharmacyName())
+                .pharmacyAddress(pharmacy.getPharmacyAddress())
                 .latitude(pharmacy.getLatitude())
                 .longitude(pharmacy.getLongitude())
                 .build();
