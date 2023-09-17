@@ -1,5 +1,6 @@
 package com.example.pharmacyrecommendation.direction.controller;
 
+import com.example.pharmacyrecommendation.direction.dto.InputDto;
 import com.example.pharmacyrecommendation.direction.dto.directionDto;
 import com.example.pharmacyrecommendation.pharmacy.service.PharmacyRecommendationService;
 import lombok.RequiredArgsConstructor;
@@ -21,12 +22,12 @@ public class FormController {
     }
 
     @PostMapping("/search")
-    public ModelAndView postDirection(@ModelAttribute directionDto.InputDto inputDto) {
+    public ModelAndView postDirection(@ModelAttribute InputDto inputDto) {
+        System.out.println("inputDto = " + inputDto.getAddress());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("output");
         modelAndView.addObject("outputFormList",
                 pharmacyRecommendationService.recommendPharmacyList(inputDto.getAddress()));
-
         return modelAndView;
     }
 }
