@@ -5,6 +5,7 @@ import com.example.pharmacyrecommendation.direction.dto.directionDto;
 import com.example.pharmacyrecommendation.pharmacy.service.PharmacyRecommendationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,13 +18,13 @@ public class FormController {
     private final PharmacyRecommendationService pharmacyRecommendationService;
 
     @GetMapping("/")
-    public String main() {
+    public String main(Model model) {
+        model.addAttribute("inputDto", new InputDto());
         return "main";
     }
 
     @PostMapping("/search")
     public ModelAndView postDirection(@ModelAttribute InputDto inputDto) {
-        System.out.println("inputDto = " + inputDto.getAddress());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("output");
         modelAndView.addObject("outputFormList",

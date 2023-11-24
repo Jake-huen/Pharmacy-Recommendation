@@ -2,11 +2,10 @@ package com.example.pharmacyrecommendation.direction.dto;
 
 import lombok.*;
 
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Builder
+@Data
 public class InputDto {
     private String address;
 }
