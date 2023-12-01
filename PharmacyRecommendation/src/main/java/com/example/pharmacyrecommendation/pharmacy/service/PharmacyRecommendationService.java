@@ -52,7 +52,8 @@ public class PharmacyRecommendationService {
         // 2. Kakao 카테고리를 이용한 장소 검색 api 이용
         List<Direction> directionList = directionService.buildDirectionListByCategoryApi(documentDto);
 
-        return directionService.saveAll(directionList).stream()
+        return directionService.saveAll(directionList)
+                .stream()
                 .map(this::convertToOutputDto)
                 .collect(Collectors.toList());
     }
