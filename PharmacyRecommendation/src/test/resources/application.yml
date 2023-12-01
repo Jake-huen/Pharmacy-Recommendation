@@ -11,4 +11,8 @@ spring:
 kakao:
   rest:
     api:
-      key: 9759fd53a9702f5a60fa34e96b979b98
+      key: 95ea6980c2a48ac4958ed5e4636396a3
+pharmacy:
+  recommendation:
+    base:
+      url: http://localhost:8080/dir/
