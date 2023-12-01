@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Pharmacy Recommendation System</title>
-    <!--부트스트랩 css 추가-->
-    <link rel="stylesheet" href="/css/lib/styles.css">
+    <!-- 부트스트랩 css 추가 -->
+    <link rel="stylesheet" th:href="@{/css/lib/styles.css}">
 
     <style>
-        .grid-image, .h2-title{
+        .grid-image, .h2-title {
             display: flex;
             justify-content: center;
         }
+
         img {
             margin: 0 0 5px;
             width: 70%;
@@ -24,6 +25,7 @@
 </div>
 
 <table class="table table-hover">
+    <thead>
     <tr>
         <th>약국명</th>
         <th>약국 주소</th>
@@ -31,21 +33,24 @@
         <th>길안내 링크</th>
         <th>로드뷰 링크</th>
     </tr>
-    {{#each outputFormList}}
-    <tr>
-        <td>{{pharmacyName}}</td>
-        <td>{{pharmacyAddress}}</td>
-        <td>{{distance}}</td>
-        <td><a href="{{directionUrl}}">{{directionUrl}}</a></td>
-        <td><a href="{{roadViewUrl}}">{{roadViewUrl}}</a></td>
+    </thead>
+    <tbody>
+    <tr th:each="pharmacyResult : ${outputFormList}">
+        <td th:text="${pharmacyResult.pharmacyName}"></td>
+        <td th:text="${pharmacyResult.pharmacyAddress}"></td>
+        <td th:text="${pharmacyResult.distance}"></td>
+        <td><a th:href="${pharmacyResult.directionUrl}" th:text="${pharmacyResult.directionUrl}"></a></td>
+        <td><a th:href="${pharmacyResult.roadViewUrl}" th:text="${pharmacyResult.roadViewUrl}"></a></td>
     </tr>
-    {{/each}}
+    </tbody>
 </table>
+
 <div class="grid-image">
-    <img src="/images/kakao.png" alt="kakao" class="img-responsive img-rounded">
+    <img th:src="@{/images/kakao.png}" alt="kakao" class="img-responsive img-rounded">
 </div>
-<script src="/js/lib/jquery.min.js"></script>
-<script src="/js/lib/bootstrap.min.js"></script>
+
+<script th:src="@{/js/lib/jquery.min.js}"></script>
+<script th:src="@{/js/lib/bootstrap.min.js}"></script>
 
 </body>
 </html>

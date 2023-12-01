@@ -22,7 +22,7 @@ public class KakaoCategorySearchService {
 
     private final RestTemplate restTemplate;
 
-    private static final String PHARMACY_CATEGORY = "PM9"; // 약국 카테괴
+    private static final String PHARMACY_CATEGORY = "PM9"; // 약국 카테고리
 
     @Value("${kakao.rest.api.key}")
     private String kakaoRestApiKey;
